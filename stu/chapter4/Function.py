@@ -70,3 +70,28 @@ def ptest4(no, age, *names):
     print('Names are : ', names)
     print('Age is : ', age)
 ptest4(300,25,'Jack','Jane','Jone','Rose')
+#关键字参数收集
+def ptest5(no,**ps):
+    print('No is : ', no)
+    print('Parameters are : ', ps)
+ptest5(100,name='Jack',age=37)
+#关键字参数收集只收集没有明确定义的关键字参数
+def ptest6(no,message,**ps):
+    print('No is : ', no)
+    print('Message is : ', message)
+    print('Parameters are : ', ps)
+ptest6(100,name='Harry',age=37,message='OK')
+def ptest7(no, *ps, **pks):
+    print('No is : ', no)
+    print('Simple parameters : ', ps)
+    print('Key parameters : ', pks)
+ptest7(100,'A','B','C',name='Jack',age=37)
+#逆向参数收集
+def ptest8(a,b):
+    print('a is : ', a, ', b is : ', b)
+p1 = (10, 20)
+p2 = ['A','B']
+p3 = {'a':100,'b':200}
+ptest8(*p1)
+ptest8(*p2)
+ptest8(**p3)
